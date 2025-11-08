@@ -1,4 +1,7 @@
-class Calculator:
+import math
+
+
+class Calculator():
     def add(self, x, y):
         return x + y
 
@@ -7,3 +10,17 @@ class Calculator:
 
     def mul(self, x, y):
         return x * y
+
+
+name = str = input("enter your name ")
+print(f"hello {name} ")
+
+action = str = input("you want to do add,sub,mul or exit?").lower()
+calc = Calculator()
+
+while (action != "exit"):
+
+    if action == "add":
+        X = int(input("give me first number "))
+        Y = int(input("give me second number "))
+        calc.add(X, Y)
