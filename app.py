@@ -25,20 +25,29 @@ class Calculator():
             return "cant find the sqrt of a negative number"
         return math.sqrt(self.x)
 
+    def power(self):
+        return self.x ** self.y
+
 
 name = input("enter your name ")
 print(f"hello {name} ")
 
-action = input("you want to do add,sub,mul,div,sqrt or exit? \n ").lower()
+action = input(
+    "you want to do add,sub,mul,div,sqrt,power or exit? \n ").lower()
 
 
 while (action != "exit"):
 
-    if action in ["add", "sub", "mul", "div", "sqrt"]:
-        if (action == "sqrt"):
+    if action in ["add", "sub", "mul", "div", "sqrt", "power"]:
+        if action == "sqrt":
             x = int(input("give me the number "))
             calc = Calculator(x, 0)
             print(f"Result:  {calc.sqrt()}")
+        elif action == "power":
+            x = float(input("give me base number "))
+            y = float(input("give me the power  number "))
+            calc = Calculator(x, y)
+            print(f"Result:  {calc.power()}")
         else:
             x = float(input("give me first number "))
             y = float(input("give me second number "))
@@ -51,9 +60,11 @@ while (action != "exit"):
                 print(f"Result: {calc.mul()}\n")
             elif action == "div":
                 print(f"Result: {calc.div()}\n")
+
     else:
         print("unknown command.Try again")
-    action = input("you want to do add,sub,mul,div,sqrt or exit?").lower()
+    action = input(
+        "you want to do add,sub,mul,div,sqrt,power or exit?").lower()
 
 
 print("\nexiting program...")
