@@ -2,36 +2,44 @@ import math
 
 
 class Calculator():
-    def add(self, x, y):
-        return x + y
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
 
-    def sub(self, x, y):
-        return x - y
+    def add(self):
+        return self.x + self.y
 
-    def mul(self, x, y):
-        return x * y
+    def sub(self):
+        return self.x - self.y
+
+    def mul(self):
+        return self.x * self.y
 
 
 name = str = input("enter your name ")
 print(f"hello {name} ")
 
 action = str = input("you want to do add,sub,mul or exit?").lower()
-calc = Calculator()
+
 
 while (action != "exit"):
 
     if action == "add":
-        X = int(input("give me first number "))
-        Y = int(input("give me second number "))
-        calc.add(X, Y)
+
+        x = int(input("give me first number "))
+        y = int(input("give me second number "))
+        calc = Calculator(x, y)
+        print("Result: ", calc.add())
     elif action == "sub":
         X = int(input("give me first number "))
         Y = int(input("give me second number "))
-        calc.sub(X, Y)
+        calc = Calculator(x, y)
+        print("Result: ", calc.sub())
     elif action == "mul":
         X = int(input("give me first number "))
         Y = int(input("give me second number "))
-        calc.mul(X, Y)
+        calc = Calculator(x, y)
+        print("Result: ", calc.mul())
     else:
         print("unknown command.Try again")
     action = input("you want to do add,sub,mul or exit?").lower()
