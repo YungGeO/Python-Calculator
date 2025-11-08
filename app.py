@@ -19,7 +19,7 @@ class Calculator():
 name = str = input("enter your name ")
 print(f"hello {name} ")
 
-action = str = input("you want to do add,sub,mul or exit?").lower()
+action = str = input("you want to do add,sub,mul or exit? \n ").lower()
 
 
 while (action != "exit"):
