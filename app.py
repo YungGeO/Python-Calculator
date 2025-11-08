@@ -24,22 +24,20 @@ action = str = input("you want to do add,sub,mul or exit? \n ").lower()
 
 while (action != "exit"):
 
-    if action == "add":
+    if action in ["add", "sub", "mul"]:
 
         x = int(input("give me first number "))
         y = int(input("give me second number "))
         calc = Calculator(x, y)
-        print("Result: ", calc.add())
-    elif action == "sub":
-        X = int(input("give me first number "))
-        Y = int(input("give me second number "))
-        calc = Calculator(x, y)
-        print("Result: ", calc.sub())
-    elif action == "mul":
-        X = int(input("give me first number "))
-        Y = int(input("give me second number "))
-        calc = Calculator(x, y)
-        print("Result: ", calc.mul())
+        if action == "add":
+            print(f"Result {calc.add()}\n")
+        elif action == "sub":
+            print(f"Result: {calc.sub()}\n")
+        elif action == "mul":
+            print(f"Result: {calc.sub()}\n")
     else:
         print("unknown command.Try again")
     action = input("you want to do add,sub,mul or exit?").lower()
+
+
+print("\nexiting program...")
